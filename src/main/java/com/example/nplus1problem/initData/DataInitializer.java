@@ -17,16 +17,16 @@ public class DataInitializer implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             Parent parent = Parent.builder()
-                    .name("parent" + i)
+                    .name("parent : " + i)
                     .build();
             parentRepository.save(parent);
 
             for (int j = 0; j < 10; j++) {
                 childRepository.save(Child.builder()
                         .parent(parent)
-                        .name("child" + j + "parent : " + i)
+                        .name("child : " + j)
                         .build());
             }
         }

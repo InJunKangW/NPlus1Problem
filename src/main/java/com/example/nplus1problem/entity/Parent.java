@@ -2,6 +2,9 @@ package com.example.nplus1problem.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,5 +22,7 @@ public class Parent {
 
     @OneToMany(mappedBy = "parent")
     @ToString.Exclude
-    private List<Child> children;
+    @Builder.Default
+//    @BatchSize(size = 10)
+    private List<Child> children = new ArrayList<>();
 }
