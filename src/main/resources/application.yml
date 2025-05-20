@@ -1,5 +1,7 @@
 spring:
   jpa:
+    hibernate:
+      ddl-auto: create
     show-sql: true
     database: h2
     properties:

@@ -2,7 +2,7 @@ package com.example.nplus1problem;
 
 import com.example.nplus1problem.dto.ChildDto;
 import com.example.nplus1problem.entity.Parent;
-import com.example.nplus1problem.repository.ParentQuerydsl;
+import com.example.nplus1problem.repository.FamilyQuerydsl;
 import com.example.nplus1problem.repository.ParentRepository;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class NPlus1Test {
     private ParentRepository parentRepository;
 
     @Autowired
-    private ParentQuerydsl parentQuerydsl;
+    private FamilyQuerydsl familyQuerydsl;
 
     @BeforeEach
     void beforeEach(TestInfo testInfo) {
@@ -69,7 +69,7 @@ public class NPlus1Test {
     void NPlus1ProblemSolvedWithQuerydsl() {
         System.out.println("\n\n\n NPlus1 Problem Solved With Querydsl Test Start! \n\n\n");
 
-        List<ChildDto> childDtoList = parentQuerydsl.getChildDtoListWithQuerydsl();
+        List<ChildDto> childDtoList = familyQuerydsl.getChildDtoListWithQuerydsl();
 
         for (ChildDto childDto : childDtoList) {
             System.out.println(childDto);
@@ -82,7 +82,7 @@ public class NPlus1Test {
     void NPlus1ProblemSolvedWithQuerydslWithQueryProjection() {
         System.out.println("\n\n\n NPlus1 Problem Solved With Querydsl Test Start! \n\n\n");
 
-        List<ChildDto> childDtoList = parentQuerydsl.getChildDtoListWithQuerydslWithQueryProjection();
+        List<ChildDto> childDtoList = familyQuerydsl.getChildDtoListWithQuerydslWithQueryProjection();
 
         for (ChildDto childDto : childDtoList) {
             System.out.println(childDto);
